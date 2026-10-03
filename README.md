@@ -85,9 +85,9 @@ python -m mediatidy "D:\Videos" --recursive --folders --apply
 | `UHF.1989.1080p.BluRay.x264.YIFY.mp4` | `UHF (1989).mp4` |
 | `Tucker And Dale Vs Evil 2010 1080p BluRay x264.mkv` | `Tucker and Dale vs Evil (2010).mkv` |
 | `Dune (1984) Extended 1080p H264 AC-3.mkv` | `Dune (1984) - Extended.mkv` |
-| `Tires.S01E01.1080p.WEB.H264-NHTFS.mkv` | `Tires S01E01.mkv` |
+| `Stranger.Things.S01E01.1080p.WEB.H264-NHTFS.mkv` | `Stranger Things S01E01.mkv` |
 | `Breaking.Bad.S02E05.720p.HDTV.x264.mkv` | `Breaking Bad S02E05.mkv` |
-| `Show.2019.S01E01E02.1080p.BluRay.mkv` | `Show (2019) S01E01-E02.mkv` |
+| `The.Mandalorian.2019.S01E01E02.1080p.BluRay.mkv` | `The Mandalorian (2019) S01E01-E02.mkv` |
 | `73ID02FFYw20.mp4` | *left alone* (looks like a hash/ID) |
 | `rangmaster.mp4` | *left alone* (no year found) |
 
