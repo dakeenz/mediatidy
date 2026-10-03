@@ -3,6 +3,13 @@
 Rename messy archived media files into clean, consistent names — and tag
 them with open `.nfo` sidecars so nothing about the original file is lost.
 
+## Download
+
+No Python, no technical setup. Grab the Windows build from
+[Releases](https://github.com/dakeenz/mediatidy/releases), unzip it, and
+double-click `tidy-media.bat`. It asks which folder to tidy, shows what it
+will rename, and asks before changing anything. Everything is undoable.
+
 ## The rule
 
 - **Immediately recognizable titles** → `Title (Year).ext`, or
