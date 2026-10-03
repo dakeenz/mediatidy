@@ -359,6 +359,11 @@ def parse_foldername(name: str) -> tuple[str | None, str]:
     Returns (new_name, kind) where new_name is None when the folder
     should be left alone. kind is "movie", "show", or a leave-alone reason.
     """
+    # the program's own name is never a media title — leave it alone,
+    # in any case/separator variation (MediaTidy, mediatidy, media-tidy…)
+    if re.sub(r"[\s._-]+", "", name).lower() == "mediatidy":
+        return None, "already clean"
+
     s = _strip_www_prefix(name)
 
     # season/specials subfolders are organization, not titles — never touch
