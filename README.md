@@ -80,16 +80,18 @@ python -m mediatidy "D:\Videos" --recursive --folders --apply
 
 ## Examples
 
-| Before | After |
-|---|---|
-| `UHF.1989.1080p.BluRay.x264.YIFY.mp4` | `UHF (1989).mp4` |
-| `Tucker And Dale Vs Evil 2010 1080p BluRay x264.mkv` | `Tucker and Dale vs Evil (2010).mkv` |
-| `Dune (1984) Extended 1080p H264 AC-3.mkv` | `Dune (1984) - Extended.mkv` |
-| `Stranger.Things.S01E01.1080p.WEB.H264-NHTFS.mkv` | `Stranger Things S01E01.mkv` |
-| `Breaking.Bad.S02E05.720p.HDTV.x264.mkv` | `Breaking Bad S02E05.mkv` |
-| `The.Mandalorian.2019.S01E01E02.1080p.BluRay.mkv` | `The Mandalorian (2019) S01E01-E02.mkv` |
-| `73ID02FFYw20.mp4` | *left alone* (looks like a hash/ID) |
-| `rangmaster.mp4` | *left alone* (no year found) |
+| Before | After | Ability |
+|---|---|---|
+| `Pulp.Fiction.1994.1080p.BluRay.x264.YIFY.mp4` | `Pulp Fiction (1994).mp4` | strips quality/codec/group junk |
+| `Dune.1984.Extended.1080p.H264.AC-3.mkv` | `Dune (1984) - Extended.mkv` | keeps real editions |
+| `Deadpool.and.Wolverine.2024.1080p.WEBRip.x264.AAC5.1-[YTS.MX].mp4` | `Deadpool and Wolverine (2024).mp4` | bracketed release groups |
+| `Parasite.2019.1080p.h264.Ac3.Ita.Ac3.5.1.Eng.Sub.Ita.Eng.Spa-MIRCrew.mkv` | `Parasite (2019).mkv` | multi-language clutter |
+| `Se7en.1995.XViD.REQUEST.avi` | `Se7en (1995).avi` | numbers inside titles |
+| `Stranger.Things.S01E01.1080p.WEB.H264-NHTFS.mkv` | `Stranger Things S01E01.mkv` | TV episodes |
+| `The.Mandalorian.2019.S01E01E02.1080p.BluRay.mkv` | `The Mandalorian (2019) S01E01-E02.mkv` | multi-episode files |
+| `The.Wire.1x03.HDTV.avi` | `The Wire S01E03.avi` | alternate episode formats |
+| `The.Dark.Knight.2008.1080p.BluRay.x264.[YTS]` | `The Dark Knight (2008)` | folder renaming |
+| `73ID02FFYw20.mp4` | *left alone* | never guesses |
 
 TV episodes are recognized by `S01E01` / `1x01` markers (year optional);
 each episode gets a Kodi-style `<episodedetails>` `.nfo` with season and
