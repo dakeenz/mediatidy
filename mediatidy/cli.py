@@ -28,6 +28,24 @@ def _check_env() -> int:
     return 0
 
 
+def _program_dir() -> Path:
+    """Directory holding the running program.
+
+    The folder planner must never rename this directory or any of its
+    parents: doing so would rename the program out from under itself
+    while it is running (e.g. the user picks a folder that contains the
+    extracted MediaTidy folder).
+    """
+    if getattr(sys, "frozen", False):
+        return Path(sys.executable).resolve().parent
+    return Path(__file__).resolve().parent
+
+
+def _self_protected_dirs() -> set[Path]:
+    d = _program_dir()
+    return {d, *d.parents}
+
+
 def _iter_files(root: Path, recursive: bool):
     if recursive:
         gen = root.rglob("*")
@@ -237,6 +255,17 @@ def main(argv=None) -> int:
     if args.folders:
         folder_entries, folder_unrec, folder_warnings = \
             build_folder_plan(root)
+        # never rename the folder holding this program (or its parents):
+        # renaming it would move the running program out from under itself
+        protected = _self_protected_dirs()
+        kept = []
+        for fe in folder_entries:
+            if fe.src.resolve() in protected:
+                folder_warnings.append(
+                    f"skipped (holds the running program): {fe.src.name}")
+            else:
+                kept.append(fe)
+        folder_entries = kept
     if not files and not folder_entries and not args.folders:
         print("No video files found.")
         return 0
