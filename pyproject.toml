@@ -1,0 +1,10 @@
+[project]
+name = "mediatidy"
+version = "0.3.2"
+description = "Rename and tag archived media files: clean titles, verified quality, .nfo sidecars"
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+
+[project.scripts]
+mediatidy = "mediatidy.cli:main"
